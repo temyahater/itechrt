@@ -1,0 +1,162 @@
+body {
+  margin: 0 auto;
+  width: 1400px;
+  height: 3000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header {
+  width: 100%;
+  height: 700px;
+  background: lightblue;
+}
+
+main {
+  width: 100%;
+  height: 2500px;
+  background: #161616;
+  color: #9e9898;
+}
+
+footer {
+  width: 100%;
+  height: 400px;
+  background: #9e9898;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #9e9898;
+}
+
+footer div:nth-child(1) {
+  height: 234px;
+}
+
+footer div:nth-child(2) {
+  background: #161616;
+  height: 100px;
+}
+
+.header-nav {
+  width: 1400px;
+  font-size: 20px;
+  position: fixed;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.main-nav {
+  width: 100%;
+  height: 100px;
+  color: #9e9898;
+}
+
+.main-nav img {
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+}
+
+.main-nav span {
+  width: 400px;
+}
+
+.sliderImg {
+  height: 584px;
+  width: 100%;
+}
+
+.notebooks {
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #161616;
+  font-size: 17px;
+}
+
+.notebooks div {
+  width: 300px;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.notebooks div img:nth-child(1) {
+  width: 300px;
+  height: 300px;
+}
+
+.notebooks div img:nth-child(3) {
+  width: 150px;
+  height: 50px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.notebooks div h2 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.notebooks div:nth-child(1) img:nth-child(3) {
+  width: 50px;
+  height: 50px;
+}
+
+.notebooks div:nth-child(2) img:nth-child(3) {
+  width: 50px;
+  height: 50px;
+}
+
+.notebooks div:nth-child(3) img:nth-child(3) {
+  width: 50px;
+  height: 50px;
+}
+
+.company div {
+  width: 33%;
+}
+
+.company div img {
+  width: 200px;
+  height: 100px;
+}
+
+.company div div:last-child {
+  width: 100%;
+  height: 90px;
+}
+
+.company div div:last-child img {
+  width: 100px;
+  height: 100px;
+}
+
+.company div:nth-child(1) img:nth-child(1) {
+  width: 100px;
+  height: 100px;
+}
+
+.company div:last-child div {
+  margin-top: 80px;
+}
+/*# sourceMappingURL=style.css.map */
