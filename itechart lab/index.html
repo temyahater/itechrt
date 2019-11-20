@@ -36,9 +36,9 @@
                             Account
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Basket</a>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Enter/exit</a>
-                            <a class="dropdown-item" href="#">Delete account</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#basket">Basket</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#account">Enter/exit</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteAccount">Delete account</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">About us</a>
                         </div>
@@ -51,12 +51,34 @@
                 </div>
             </nav>
         </div>
+        
+        <!--all modals-->
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteAccount" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="deleteLabel">Delete account</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Your account will be deleted soon!
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Okay</button>
+                  <button type="button" class="btn btn-dark" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+        <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="account" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Authentication</h5>
+                <h5 class="modal-title" id="account">Authentication</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -64,12 +86,12 @@
               <div class="modal-body">
                 <form>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label>Email address</label>
                     <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
                     <small class="form-text text-muted">*If u are Admin, then enter 'admin' login and 'admin' password*</small>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+                    <label>Password</label>
                     <input type="password" class="form-control" placeholder="Password">
                   </div>
                   <button type="submit" class="btn btn-secondary">Sign In</button>
@@ -77,6 +99,71 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="basket" tabindex="-1" role="dialog" aria-labelledby="basket" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="basket">Your basket</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <ol class="list-group">
+                    <li class="list-group-item">
+                        <div class="card">
+                          <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Product 1
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+                              <div class="card-body">Info about product</div>
+                          </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="card">
+                        <div class="card-header" id="headingTwo">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                              Product 2
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
+                            <div class="card-body">Info about product</div>
+                          </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="card">
+                        <div class="card-header" id="headingThree">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                              Product 3
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree">
+                            <div class="card-body">Info about product</div>
+                          </div>
+                        </div>
+                      </li>
+                  </ol>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-dark"> Pay all</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -236,7 +323,7 @@
     <footer class="bg-dark d-flex flex-column" id="footer">
       <div class="container d-flex align-items-center justify-content-around p-0">
         <ul>
-          <span>Contacts :</span>
+          Contacts :
           <li>Some contact information</li>
           <li>Some contact information</li>
           <li>Some contact information</li>
@@ -244,7 +331,7 @@
           <li>Some contact information</li>
         </ul> 
         <ul>
-          <span>About us :</span>
+          About us :
           <li>Some information about us</li>
           <li>Some information about us</li>
           <li>Some information about us</li>
@@ -252,7 +339,7 @@
           <li>Some information about us</li>
         </ul>
         <ul>
-          <span>Link :</span>
+          Link :
           <li>Some information link</li>
           <li>Some information link</li>
           <li>Some information link</li>

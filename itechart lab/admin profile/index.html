@@ -66,20 +66,20 @@
                     <tbody>
                       <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>Sava</td>
+                        <td>Down</td>
+                        <td>@sad</td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>Kirill</td>
+                        <td>Zaharov</td>
+                        <td>@kazah</td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
+                        <td>John</td>
+                        <td>Martin</td>
                         <td>@twitter</td>
                       </tr>
                     </tbody>
@@ -111,9 +111,9 @@
                     <tbody>
                       <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>Sava</td>
+                        <td>Down</td>
+                        <td>@sad</td>
                         <td>
                           <div class="form-check form-check-inline">
                               <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -144,7 +144,10 @@
                         <th scope="col">Price</th>
                         <th scope="col">Description</th>
                         <th scope="col">Delete check</th>
-                        <th scope="col"><button class="btn btn-secondary">Delete</button><button class="btn btn-dark ml-1">Add product</button></th>
+                        <th scope="col">
+                          <button class="btn btn-secondary">Delete</button>
+                          <button class="btn btn-dark ml-1" data-toggle="modal" data-target="#productAdd">Add product</button>
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -187,6 +190,41 @@
               </div>
             </div>
           </div>
+          
+          <!--all modals-->
+
+          <div class="modal fade" id="productAdd" tabindex="-1" role="dialog" aria-labelledby="productAdd" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="productAdd">Authentication</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label>Model</label>
+                        <input type="email" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <label>Price</label>
+                        <input type="email" class="form-control">
+                        </div>
+                      <div class="form-group">
+                        <label>Description</label>
+                        <input type="email" class="form-control">
+                      </div>
+                      <button class="btn btn-dark">Add product</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
     </main>
     <footer></footer>
