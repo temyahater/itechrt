@@ -37,7 +37,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
     var login = document.getElementById('login');
     var password = document.getElementById('password');
     var adnimForm = document.getElementById('adminEnter');
-    if(login.innerHTML == 'admin' && password.innerHTML == 'admin') {
+    if(login.innerText == 'admin' && password.innerText == 'admin') {
       adnimForm.action = 'admin profile/index.html';
     }
     else alert('nope');
