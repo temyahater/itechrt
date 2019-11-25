@@ -1,10 +1,3 @@
-$('#exampleModal').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget) 
-    var recipient = button.data('whatever') 
-    var modal = $(this)
-    modal.find('.modal-title').text('New message to ' + recipient)
-    modal.find('.modal-body input').val(recipient)
-  }) 
 
   var users = {
     name: 'ne Sava',
@@ -25,22 +18,49 @@ $('#exampleModal').on('show.bs.modal', function (event) {
     for(let i=0; i < data.length; i++) {
       data[i].onclick = function() {
         if(data[i].cellIndex==1) {
-          console.log(data[i].innerText = users.name);
-          console.log(data[i+1].innerText = users.lastname);
-          console.log(data[i+2].innerText = users.username); //:)
+          data[i].innerText = users.name;
+          data[i+1].innerText = users.lastname;
+          data[i+2].innerText = users.username; //:)
         }
       }
     }
   }
 
-  function enterAdmin() {
-    var login = document.getElementById('login');
-    var password = document.getElementById('password');
-    var adnimForm = document.getElementById('adminEnter');
-    if(login.innerText == 'admin' && password.innerText == 'admin') {
-      adnimForm.action = 'admin profile/index.html';
-    }
-    else alert('nope');
-  }
+  var pass='1';
+  $(document).ready(function(){
+    $('#adminEnter').on('click',function(){
+      if($('#login').val()==$('#password').val()&& $('#login').val()==pass) {
+        location.href = 'admin profile/index.html';
+      }
+      else alert('nope');
+    })
+  })
 
+  $(document).ready(function(){
+    var i=0;
+    $('#add').on('click',function(){
+      $('#products-table > tbody').append(`<tr><th scope="row">${i}</th><td>model ${i}</td><td>price 
+      ${i}</td><td>description ${i}</td><td>picture ${i}</td><td><div class=\"form-check form-check-inline\"> 
+      <input class=\"form-check-input\" type=\"checkbox\" id=\"inlineCheckbox1\" value=\"option1\"></div></td></tr>`);
+      i++;
+    })
+  })
+
+  $(document).ready(function(){
+    $('#delete-product').on('click',function(){
+      $('#products-table > tbody > tr:last').remove();
+      })
+  })
   
+  $(document).ready(function(){
+    $('#delete-users').on('click',function(){
+      if($('#check-delete').is(':checked')) $('#users-delete-table > tbody > tr:last').remove()
+      else alert('ny ne sore');
+      })
+  })
+
+  /*$(document).ready(function(){
+    $('.like').on('click', function(){
+      $(this).css('box-shadow', '10px 10px 5px #888'); 
+    })
+  })*/
