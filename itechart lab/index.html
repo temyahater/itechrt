@@ -33,7 +33,7 @@
                         <a class="nav-link" href="#footer">Contacts</a> 
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="account-menu nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Account
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -68,7 +68,7 @@
                   Your account will be deleted soon!
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Okay</button>
+                  <button type="button" class="delete-account btn btn-secondary" data-dismiss="modal">Okay</button>
                   <button type="button" class="btn btn-dark" data-dismiss="modal">Cancel</button>
                 </div>
               </div>
@@ -89,7 +89,17 @@
                   <div class="form-group">
                     <label>Email address</label>
                     <input type="text" id="login" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small class="form-text text-muted">*If u are Admin, then enter 'admin' login and 'admin' password*</small>
+                    <small class="form-text text-muted">*If u are Admin, then enter 'admin' login and 'admin' password</small>
+                  </div>
+                  <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" id="login" class="form-control">
+                      <small class="form-text text-muted">*Only not Vlad</small>
+                  </div>
+                  <div class="form-group">
+                      <label>Surname</label>
+                      <input type="text" id="login" class="form-control">
+                      <small class="form-text text-muted">*Only not Savinov</small>
                   </div>
                   <div class="form-group">
                     <label>Password</label>
@@ -97,11 +107,12 @@
                   </div>
                   <form action="#">
                     <input id="adminEnter" class="btn btn-secondary" type="button" value="Sign in">
+                    <input class="register btn btn-secondary" type="button" value="Register" data-dismiss="modal">
                   </form>
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                <button type="button" class="exit-account btn btn-dark" data-dismiss="modal">Exit</button>
               </div>
             </div>
           </div>
@@ -279,7 +290,7 @@
               Both can be configured with up to an i7 processor, 16GB of RAM, a GeForce GTX 965M GPU, and a 4K display.
             </p>
             <div class="container p-0 d-flex justify-content-center align-items-center">
-              <img class="like" src="images/like.png" alt="laptop logo">
+              <img class="like" src="images/like.png" alt="like">
             </div>
           </div>
           <div class="container h-100 pt-4 d-flex flex-column align-items-center">
@@ -352,11 +363,11 @@
       </div>
       <div class="shadow container-fluid d-flex">
         <div class="container d-flex justify-content-around">
-          <img src="images/instagram.png" alt="Instagram"><span>Instagram</span>
-          <img src="images/twitter.png" alt="Twitter"><span>Twitter</span>
-          <img src="images/facebook.png" alt="Facebook"><span>Facebook</span>
-          <img src="images/vk.png" alt="Vk"><span>Vk</span>
-          <img src="images/github.png" alt="GitHub"><span>GitHub</span>
+          <img src="images/instagram.png" alt="Instagram"><span><a href="https://www.instagram.com/temyahater" target="_blank">Instagram</a></span>
+          <img src="images/twitter.png" alt="Twitter"><span><a href="https://twitter.com" target="_blank">Twitter</a></span>
+          <img src="images/facebook.png" alt="Facebook"><span><a href="https://www.facebook.com" target="_blank">Facebook</a></span>
+          <img src="images/vk.png" alt="Vk"><span><a href="https://vk.com/temyahater" target="_blank">Vk</a></span>
+          <img src="images/github.png" alt="GitHub"><span><a href="https://github.com/temyahater" target="_blank">GitHub</a></span>
         </div>
       </div>
     </footer>

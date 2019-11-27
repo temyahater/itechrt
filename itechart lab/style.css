@@ -62,6 +62,14 @@ footer div:nth-child(2) div span {
   margin-left: -15px;
 }
 
+footer div:nth-child(2) div span:hover {
+  text-shadow: 0px 0px 20px white;
+}
+
+footer div:nth-child(2) div span:hover a {
+  text-decoration: none;
+}
+
 .header-nav {
   width: 1400px;
   font-size: 20px;

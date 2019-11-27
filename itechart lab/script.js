@@ -29,38 +29,81 @@
   var pass='1';
   $(document).ready(function(){
     $('#adminEnter').on('click',function(){
-      if($('#login').val()==$('#password').val()&& $('#login').val()==pass) {
-        location.href = 'admin profile/index.html';
-      }
-      else alert('nope');
+      if($('#login').val()==$('#password').val()&& $('#login').val()==pass) location.href = 'admin profile/index.html';
+      else if($('#password').val()!==pass) {
+        $('#password').css('border-color', 'red');
+        $('#login').css('border-color', 'gray');
+      } 
+      else $('#login').css('border-color', 'red');
     })
   })
 
   $(document).ready(function(){
-    var i=0;
+    var i=$('#products-table').find('th:last').html();
     $('#add').on('click',function(){
-      $('#products-table > tbody').append(`<tr><th scope="row">${i}</th><td>model ${i}</td><td>price 
-      ${i}</td><td>description ${i}</td><td>picture ${i}</td><td><div class=\"form-check form-check-inline\"> 
-      <input class=\"form-check-input\" type=\"checkbox\" id=\"inlineCheckbox1\" value=\"option1\"></div></td></tr>`);
+      var addModel=$('.add-model').val();
+      var addPrice=$('.add-price').val();
+      var addDescription=$('.add-description').val();
       i++;
+      $('#products-table > tbody').append(`<tr><th scope="row">${i}</th><td>${addModel}</td><td>${addPrice} 
+      </td><td>${addDescription}</td><td>picture</td><td><div class=\"form-check form-check-inline\"> 
+      <input class=\"delete-check-product form-check-input\" type=\"checkbox\" id=\"inlineCheckbox1\" value=\"option1\"></div></td></tr>`);
     })
   })
 
   $(document).ready(function(){
     $('#delete-product').on('click',function(){
-      $('#products-table > tbody > tr:last').remove();
+      if($('.delete-check-product').is(':checked')) $('input:checked').parent().parent().parent().remove()
+      else alert('ny ne sore');
+      console.log($('.delete-check-product').is(':checked'));
       })
   })
   
   $(document).ready(function(){
     $('#delete-users').on('click',function(){
-      if($('#check-delete').is(':checked')) $('#users-delete-table > tbody > tr:last').remove()
+      if($('#check-delete').is(':checked')) $('input:checked').parent().parent().parent().remove()
       else alert('ny ne sore');
       })
   })
 
-  /*$(document).ready(function(){
+  $(document).ready(function(){
+    var i=1;
     $('.like').on('click', function(){
-      $(this).css('box-shadow', '10px 10px 5px #888'); 
+      //if(i%2!=0) $(this).css('filter','drop-shadow(0px 0px 20px #888)')
+      //else $(this).css('filte','none');
+      if(i%2!=0) $(this).css('box-shadow','0px 0px 20px #888')
+      else $(this).css('box-shadow','none');
+      i++;
+      console.log(i);
     })
-  })*/
+  })
+
+   $(document).ready(function(){
+    $('.register').on('click',function(){
+      var userName=$('#login').val();
+      var userPassword=$('#password').val();
+      $('.account-menu').html(userName);
+    })
+  })
+
+  $(document).ready(function(){
+    $('.exit-account').on('click',function(){
+      $('.account-menu').html('Account');
+    })
+  })
+
+  $(document).ready(function(){
+    $('.delete-account').on('click', function(){
+      var userName=$('#login').val();
+      $('#products-table > tbody').append(`<th scope="row">1</th>
+      <td>Sava</td>
+      <td>Down</td>
+      <td>@sad</td>
+      <td>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="check-delete" value="option1">
+        </div>
+      </td>
+    </tr>`);
+    })
+  })
