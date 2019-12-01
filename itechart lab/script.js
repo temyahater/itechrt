@@ -1,30 +1,42 @@
 
-  var users = {
+  var Users = {
     name: 'ne Sava',
     lastname: 'ne Down',
-    username: 'ne @sad'
+    username: 'ne @sad',
+    password: 'sava'
   };
 
+  var AllUsers = [];
+  var AllUsersDelete = [];
+  var CountUsers = 0;
+  var CountUsersDelete = 0;
 
   function loadUsers() {
-    
+
   }
 
   function screenUsers() {
+    /*
+    let UsersTable = document.getElementById('users-table');
+    let Data = UsersTable.getElementsByTagName('td');
 
-    var usersTable = document.getElementById('users-table');
-    var data = usersTable.getElementsByTagName('td');
-
-    for(let i=0; i < data.length; i++) {
-      data[i].onclick = function() {
-        if(data[i].cellIndex==1) {
-          data[i].innerText = users.name;
-          data[i+1].innerText = users.lastname;
-          data[i+2].innerText = users.username; //:)
+    for(let i=0; i < Data.length; i++) {
+      Data[i].onclick = function() {
+        if(Data[i].cellIndex==1) {
+          Data[i].innerText = Users.name;
+          Data[i+1].innerText = Users.lastname;
+          Data[i+2].innerText = Users.username; //:)
         }
       }
-    }
+    }*/
+    console.log(AllUsers[CountUsers]);
   }
+
+  $(document).ready(function(){
+    $('.users-screen').on('click', function(){
+      console.log(AllUsers[CountUsers]);
+    })
+  })
 
   var pass='1';
   $(document).ready(function(){
@@ -41,13 +53,13 @@
   $(document).ready(function(){
     var i=$('#products-table').find('th:last').html();
     $('#add').on('click',function(){
-      var addModel=$('.add-model').val();
-      var addPrice=$('.add-price').val();
-      var addDescription=$('.add-description').val();
+      let addModel=$('.add-model').val();
+      let addPrice=$('.add-price').val();
+      let addDescription=$('.add-description').val();
       i++;
       $('#products-table > tbody').append(`<tr><th scope="row">${i}</th><td>${addModel}</td><td>${addPrice} 
       </td><td>${addDescription}</td><td>picture</td><td><div class=\"form-check form-check-inline\"> 
-      <input class=\"delete-check-product form-check-input\" type=\"checkbox\" id=\"inlineCheckbox1\" value=\"option1\"></div></td></tr>`);
+      <input class=\"delete-check-product form-check-input\" type=\"checkbox\" value=\"option1\"></div></td></tr>`);
     })
   })
 
@@ -55,34 +67,38 @@
     $('#delete-product').on('click',function(){
       if($('.delete-check-product').is(':checked')) $('input:checked').parent().parent().parent().remove()
       else alert('ny ne sore');
-      console.log($('.delete-check-product').is(':checked'));
       })
   })
   
   $(document).ready(function(){
     $('#delete-users').on('click',function(){
-      if($('#check-delete').is(':checked')) $('input:checked').parent().parent().parent().remove()
+      if($('.check-delete').is(':checked')) $('input:checked').parent().parent().parent().remove()
       else alert('ny ne sore');
       })
   })
 
   $(document).ready(function(){
-    var i=1;
+    let i=1;
     $('.like').on('click', function(){
       //if(i%2!=0) $(this).css('filter','drop-shadow(0px 0px 20px #888)')
       //else $(this).css('filte','none');
       if(i%2!=0) $(this).css('box-shadow','0px 0px 20px #888')
       else $(this).css('box-shadow','none');
       i++;
-      console.log(i);
     })
   })
 
    $(document).ready(function(){
     $('.register').on('click',function(){
-      var userName=$('#login').val();
-      var userPassword=$('#password').val();
+      let userName=$('#login').val();
+      let userPassword=$('#password').val();
       $('.account-menu').html(userName);
+      AllUsers[CountUsers]=Users;
+      AllUsers[CountUsers].name = $('.lastname-user').val();
+      AllUsers[CountUsers].lastname = $('.name-user').val();
+      AllUsers[CountUsers].username = $('#login').val();
+      AllUsers[CountUsers].password = $('#password').val();
+      CountUsers++;
     })
   })
 
@@ -93,15 +109,41 @@
   })
 
   $(document).ready(function(){
+    $('.basket-delete').on('click', function(){
+      $(this).parent().parent().parent().parent().remove();
+    })
+  })
+
+  $(document).ready(function(){
+    let i = 1;
+    $('.buy-product').on('click', function(){
+      $('.basket-list > ol').append(`<li class=\"list-group-item\">
+      <div class=\"card\">
+        <div class=\"card-header\">
+          <h5 class=\"mb-0\">
+            <button class=\"basket-product btn btn-link\" data-toggle=\"collapse\" aria-expanded=\"true\">
+              Product ${i}
+              <button class=\"basket-delete ml-5 btn btn-secondary\">Delete</button>
+            </button>
+          </h5>
+        </div>
+        <div class=\"collapse show\">
+            <div class=\"card-body\">Info about product</div>
+        </div></div></li>`);
+        i++;
+    })
+  })
+
+  $(document).ready(function(){
     $('.delete-account').on('click', function(){
-      var userName=$('#login').val();
-      $('#products-table > tbody').append(`<th scope="row">1</th>
+      let userName=$('#login').val();
+      $('#users-delete-table > tbody').append(`<th scope="row">1</th>
       <td>Sava</td>
       <td>Down</td>
       <td>@sad</td>
       <td>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="check-delete" value="option1">
+            <input class="form-check-input" type="checkbox" value="option1">
         </div>
       </td>
     </tr>`);

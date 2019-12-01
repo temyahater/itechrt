@@ -45,16 +45,16 @@
     </header>
     <main>
 
-        <div class="accordion" id="accordionExample">
+        <div class="accordion" id="accordionMe">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="screenUsers()">
+                  <button class="users-screen btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     Users
                   </button>
                 </h5>
               </div>
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionMe">
                 <div class="card-body">
                   <table id="users-table" class="table">
                     <thead>
@@ -97,7 +97,7 @@
                   </button>
                 </h5>
               </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionMe">
                 <div class="card-body">
                   <table class="table" id="users-delete-table">
                     <thead>
@@ -118,7 +118,7 @@
                         <td>@sad</td>
                         <td>
                           <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="checkbox" id="check-delete" value="option1">
+                              <input class="check-delete form-check-input" type="checkbox" value="option1">
                           </div>
                         </td>
                       </tr>
@@ -135,7 +135,7 @@
                   </button>
                 </h5>
               </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionMe">
                 <div class="card-body">
                   <table class="table" id="products-table">
                     <thead>
@@ -203,7 +203,7 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="productAdd">Product</h5>
+                    <h5 class="modal-title">Product</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
