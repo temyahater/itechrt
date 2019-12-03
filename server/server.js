@@ -1,9 +1,9 @@
-var express = require('express');
-var bparser = require('body-parser');
+const express = require('express');
+const bparser = require('body-parser');
 // var ObjectId = require('mongodb').ObjectID;
-var usersController = require('../controllers/users.js');
-var mdb = require('../mdb/mdb.js');
-var server = express();
+const usersController = require('../controllers/users.js');
+const mdb = require('../mdb/mdb.js');
+const server = express();
 server.use(bparser.json());
 server.use(bparser.urlencoded({extended:true}));
 

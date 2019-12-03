@@ -1,4 +1,4 @@
-
+import { allUsers } from "../models/users";
   var Users = {
     name: 'ne Sava',
     lastname: 'ne Down',
@@ -10,7 +10,6 @@
   var AllUsersDelete = [];
   var CountUsers = 0;
   var CountUsersDelete = 0;
-
   function loadUsers() {
 
   }
@@ -34,7 +33,7 @@
 
   $(document).ready(function(){
     $('.users-screen').on('click', function(){
-      console.log(AllUsers[CountUsers]);
+      console.log(AllUsers[0]);
     })
   })
 

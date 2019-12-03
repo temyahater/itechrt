@@ -1,4 +1,4 @@
-var mdb = require('../mdb/mdb');
+const mdb = require('../mdb/mdb');
 exports.allUsers = function(answ){
     mdb.get().collection('Users').find().toArray(function(error, files){
         answ(error, files);

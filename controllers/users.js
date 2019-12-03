@@ -1,4 +1,4 @@
-var users = require('../models/users');
+const users = require('../models/users');
 
 exports.allUsers = function(request, response){
     users.allUsers(function(error, files){

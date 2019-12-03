@@ -1,5 +1,5 @@
-var MongoClient = require('mongodb').MongoClient;
-var data = {
+const MongoClient = require('mongodb').MongoClient;
+const data = {
     mdb: null
 };
 
