@@ -12,7 +12,7 @@ exports.findByUsername = function(username, answ){
 }
 
 exports.createUser = function(user, answ){
-    mdb.get().collection('Users').insert(user, function(error, result){
+    mdb.get().collection('Users').insertOne(user, function(error, result){
         answ(error, result);
     })
 }
@@ -28,3 +28,4 @@ exports.deleteUser = function(username, answ){
         answ(error, result);
     })
 }
+

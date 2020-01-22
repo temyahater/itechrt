@@ -1,0 +1,23 @@
+[
+    {
+        "_id":"5de81378a1652f2a187b17b8",
+        "model":"msi",
+        "price":"sredne",
+        "description":"ny norm takoi",
+        "picture":"link"
+    },
+    {
+        "_id":"5de813d5c5da5e6ed8e45fb2",
+        "model":"asus",
+        "price":"dorogo",
+        "description":"chetki",
+        "picture":"link"
+    },
+    {
+        "_id":"5de81440c5da5e6ed8e45fb3",
+        "model":"omen",
+        "price":"OVER DOHYA",
+        "description":"sEkS",
+        "picture":"link"
+    }
+]

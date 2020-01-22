@@ -6,235 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" >
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/itechart lab/script.js"></script>
-    <script src="/itechart lab/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="/script.js" type="text/javascript"></script>
     <title>Admin</title>
 </head>
 <body>
     <header>
-      <div class="header-nav container-fluid p-0">
-        <nav class="header-nav navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-          <span class="navbar-brand">eShop</span>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse">
-              <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                  <a class="nav-link" href="../index.html">Home</a> 
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Account
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="https://www.google.com/" data-toggle="modal">Enter/exit</a>
-                  </div>
-              </li>
-              </ul>
-              <div class="d-flex my-2">
-                  <input class="form-control mr-2" type="search" placeholder="Search">
-                  <button class="btn btn-outline-light" type="submit">Search</button>
-              </div>
-          </div>
-      </nav>
-  </div>
+      <div id="admin-header" class="header-nav container-fluid p-0"></div>
     </header>
     <main>
 
         <div class="accordion" id="accordionMe">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="users-screen btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Users
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionMe">
-                <div class="card-body">
-                  <table id="users-table" class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Lastname</th>
-                        <th scope="col">Username</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Sava</td>
-                        <td>Down</td>
-                        <td>@sad</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Kirill</td>
-                        <td>Zaharov</td>
-                        <td>@kazah</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>John</td>
-                        <td>Martin</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Users to delete
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionMe">
-                <div class="card-body">
-                  <table class="table" id="users-delete-table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Lastname</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Delete check</th>
-                        <th scope="col"><button class="btn btn-secondary" id="delete-users">Delete</button></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Sava</td>
-                        <td>Down</td>
-                        <td>@sad</td>
-                        <td>
-                          <div class="form-check form-check-inline">
-                              <input class="check-delete form-check-input" type="checkbox" value="option1">
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Products
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionMe">
-                <div class="card-body">
-                  <table class="table" id="products-table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Model</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Picture</th>
-                        <th scope="col">Delete check</th>
-                        <th scope="col">
-                          <button id="delete-product" class="delete-product btn btn-secondary">Delete</button>
-                          <button class="btn btn-dark ml-1" data-toggle="modal" data-target="#productAdd">Add product</button>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Omen</td>
-                        <td>Price</td>
-                        <td>Description</td>
-                        <td>Picture</td>
-                        <td>
-                            <div class="form-check form-check-inline">
-                                <input class="delete-check-product form-check-input" type="checkbox" value="option1">
-                            </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Msi</td>
-                        <td>Price</td>
-                        <td>Description</td>
-                        <td>Picture</td>
-                        <td>
-                            <div class="form-check form-check-inline">
-                                <input class="delete-check-product form-check-input" type="checkbox" value="option1">
-                            </div>
-                          </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Asus</td>
-                        <td>Price</td>
-                        <td>Description</td>
-                        <td>Picture</td>
-                        <td>
-                            <div class="form-check form-check-inline">
-                                <input class="delete-check-product form-check-input" type="checkbox" value="option1">
-                            </div>
-                        </td>
-                      </tr>
-                      <tr>...</tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
+            <div id="users-screen" class="card"></div>
+            <div id="users-delete" class="card"></div>
+            <div id="products" class="card"></div>
+        </div>
           
           <!--all modals-->
 
-          <div class="modal fade" id="productAdd" tabindex="-1" role="dialog" aria-labelledby="productAdd" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Product</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    
-                      <div class="form-group">
-                        <label>Model</label>
-                        <input type="text" class="add-model form-control">
-                      </div>
-                      <div class="form-group">
-                        <label>Price</label>
-                        <input type="text" class="add-price form-control">
-                        </div>
-                      <div class="form-group">
-                        <label>Description</label>
-                        <input type="text" class="add-description form-control">
-                      </div>
-                      <div class="form-group">
-                          <label for="load-file">Input file</label>
-                          <input type="file" class="form-control-file" id="load-file">
-                        </div>
-                      <button id="add" class="btn btn-dark">Add product</button>
-                    
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="modal fade" id="product-model" tabindex="-1" role="dialog" aria-labelledby="product-model" aria-hidden="true"></div>
 
     </main>
     <footer></footer>

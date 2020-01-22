@@ -1,45 +1,118 @@
-import { allUsers } from "../models/users";
-  var Users = {
-    name: 'ne Sava',
-    lastname: 'ne Down',
-    username: 'ne @sad',
-    password: 'sava'
-  };
-
   var AllUsers = [];
   var AllUsersDelete = [];
-  var CountUsers = 0;
-  var CountUsersDelete = 0;
-  function loadUsers() {
+  var AllProducts = [];
 
+  function loadUsers(){
+    fetch('/json/users.json').then((response) => response.json()).then((data) =>{
+      let out = [];
+      data.forEach(function(user){
+        out.push(`${user._id},${user.name},${user.surname},${user.username}`);
+      });
+      out.forEach(function(item){
+        AllUsers.push(item.split(','));
+      })
+    })
   }
 
-  function screenUsers() {
-    /*
-    let UsersTable = document.getElementById('users-table');
-    let Data = UsersTable.getElementsByTagName('td');
+  function loadUsersToDelete(){
+    fetch('/json/userstodelete.json').then((response) => response.json()).then((data) =>{
+      let out = [];
+      data.forEach(function(user){
+        out.push(`${user._id},${user.name},${user.surname},${user.username}`);
+      });
+      out.forEach(function(item){
+        AllUsersDelete.push(item.split(','));
+      })
+    })
+  }
 
-    for(let i=0; i < Data.length; i++) {
-      Data[i].onclick = function() {
-        if(Data[i].cellIndex==1) {
-          Data[i].innerText = Users.name;
-          Data[i+1].innerText = Users.lastname;
-          Data[i+2].innerText = Users.username; //:)
-        }
-      }
-    }*/
-    console.log(AllUsers[CountUsers]);
+  function loadProducts(){
+    fetch('/json/products.json').then((response) => response.json()).then((data) =>{
+      let out = [];
+      data.forEach(function(product){
+        out.push(`${product._id},${product.model},${product.price},${product.description},${product.picture}`);
+      });
+      out.forEach(function(item){
+        AllProducts.push(item.split(','));
+      })
+    })
   }
 
   $(document).ready(function(){
     $('.users-screen').on('click', function(){
-      console.log(AllUsers[0]);
+      console.log('test');
     })
+  })
+
+  $(document).ready(function(){
+    let okaybymer = false;
+      $('.users-screen').on('click', function(){
+        if(!okaybymer){
+        AllUsers.forEach(function(item){
+          $('#users-table > tbody').append(`
+        <tr>
+          <th scope="row">${item[0].slice(21,24)}</th>
+          <td>${item[1]}</td>
+          <td>${item[2]}</td>
+          <td>${item[3]}</td>
+        </tr>`);
+        okaybymer = true;
+        })
+      }
+      })
+  })
+
+  $(document).ready(function(){
+    let okaybymer = false;
+      $('.users-delete').on('click', function(){
+        if(!okaybymer){
+        AllUsersDelete.forEach(function(item){
+          $('#users-delete-table > tbody').append(`
+        <tr>
+          <th scope="row">${item[0].slice(21,24)}</th>
+          <td>${item[1]}</td>
+          <td>${item[2]}</td>
+          <td>${item[3]}</td>
+          <td>
+              <div class="form-check form-check-inline">
+                <input class="check-delete form-check-input" type="checkbox" value="option1">
+              </div>  
+          </td>
+        </tr>`);
+        okaybymer = true;
+        })
+      }
+      })
+  })
+
+  $(document).ready(function(){
+    let okaybymer = false;
+      $('.products-screen').on('click', function(){
+        if(!okaybymer){
+        AllProducts.forEach(function(item){
+          $('#products-table > tbody').append(`
+          <tr>
+            <th scope="row">${item[0].slice(21,24)}</th>
+            <td>${item[1]}</td>
+            <td>${item[2]}</td>
+            <td>${item[3]}</td>
+            <td>${item[4]}</td>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="delete-check-product form-check-input" type="checkbox" value="option1">
+                </div>
+            </td>
+          </tr>`);
+        okaybymer = true;
+        })
+      }
+      })
   })
 
   var pass='1';
   $(document).ready(function(){
     $('#adminEnter').on('click',function(){
+      console.log('test');
       if($('#login').val()==$('#password').val()&& $('#login').val()==pass) location.href = 'admin profile/index.html';
       else if($('#password').val()!==pass) {
         $('#password').css('border-color', 'red');
@@ -122,7 +195,7 @@ import { allUsers } from "../models/users";
           <h5 class=\"mb-0\">
             <button class=\"basket-product btn btn-link\" data-toggle=\"collapse\" aria-expanded=\"true\">
               Product ${i}
-              <button class=\"basket-delete ml-5 btn btn-secondary\">Delete</button>
+              <input type="button" className="basket-delete ml-5 btn btn-secondary" value="Delete"/>
             </button>
           </h5>
         </div>
@@ -136,7 +209,7 @@ import { allUsers } from "../models/users";
   $(document).ready(function(){
     $('.delete-account').on('click', function(){
       let userName=$('#login').val();
-      $('#users-delete-table > tbody').append(`<th scope="row">1</th>
+      $('#users-delete-table > tbody').append(`<tr><th scope="row">1</th>
       <td>Sava</td>
       <td>Down</td>
       <td>@sad</td>

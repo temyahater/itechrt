@@ -1,0 +1,20 @@
+[
+    {   
+        "_id":"5de7728b08e1fc32142e9f52",
+        "name":"Sava",
+        "surname":"Down",
+        "username":"@sad"
+    },
+    {
+        "_id":"5de772a308e1fc32142e9f53",
+        "name":"Kirill",
+        "surname":"Zaharov",
+        "username":"@kazah"
+    },
+    {
+        "_id":"5de772b908e1fc32142e9f54",
+        "name":"Jhon",
+        "surname":"Martin",
+        "username":"@twitter"
+    }
+]
