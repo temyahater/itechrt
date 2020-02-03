@@ -193,9 +193,7 @@
       <div class=\"card\">
         <div class=\"card-header\">
           <h5 class=\"mb-0\">
-            <button class=\"basket-product btn btn-link\" data-toggle=\"collapse\" aria-expanded=\"true\">
-              Product ${i}
-              <input type="button" className="basket-delete ml-5 btn btn-secondary" value="Delete"/>
+            <button class=\"basket-product btn btn-link\">Product ${i}<input type="button" class="basket-delete ml-5 btn btn-secondary" value="Delete">
             </button>
           </h5>
         </div>
@@ -221,3 +219,6 @@
     </tr>`);
     })
   })
+
+  
+  

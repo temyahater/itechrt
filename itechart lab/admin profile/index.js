@@ -1,5 +1,6 @@
-ReactDOM.render(
-    <nav className="header-nav navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+function AdminNavbar(){
+    return(
+        <nav className="header-nav navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
           <span className="navbar-brand">eShop</span>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -24,10 +25,12 @@ ReactDOM.render(
               </div>
           </div>
       </nav>
-    , document.getElementById('admin-header'));
+    );
+}
 
-ReactDOM.render(
-    <div>
+function UsersTable(){
+    return (
+        <div>
         <div className="card-header" id="headingOne">
         <h5 className="mb-0">
             <button className="users-screen btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
@@ -54,10 +57,12 @@ ReactDOM.render(
         </div>
     </div>
     </div>
-    ,document.getElementById('users-screen'));
+    );
+}
 
-ReactDOM.render(
-    <div>
+function UserToDeleteTable(){
+    return (
+        <div>
         <div className="card-header" id="headingTwo">
         <h5 className="mb-0">
             <button className="users-delete btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" 
@@ -85,10 +90,12 @@ ReactDOM.render(
         </div>
         </div>
     </div>
-    ,document.getElementById('users-delete'));
+    );
+}
 
-ReactDOM.render(
-    <div>
+function ProductsTable(){
+    return (
+        <div>
         <div className="card-header" id="headingThree">
         <h5 className="mb-0">
             <button className="products-screen btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
@@ -121,10 +128,12 @@ ReactDOM.render(
         </div>
     </div>
     </div>
-    ,document.getElementById('products'));
+    );
+}
 
-ReactDOM.render(
-    <div>
+function Modals(){
+    return (
+        <div>
         <div className="modal-dialog" role="document">
             <div className="modal-content">
                 <div className="modal-header">
@@ -160,4 +169,63 @@ ReactDOM.render(
             </div>
         </div>
     </div>
-    ,document.getElementById('product-model'));
+    );
+}
+
+
+ReactDOM.render(AdminNavbar(), document.getElementById('admin-header'));
+
+ReactDOM.render(UsersTable(),document.getElementById('users-screen'));
+
+ReactDOM.render(UserToDeleteTable(),document.getElementById('users-delete'));
+
+ReactDOM.render(ProductsTable(),document.getElementById('products'));
+
+ReactDOM.render(Modals(),document.getElementById('product-model'));
+
+const Orientation = (props) => {
+    const OrientationValue = props.tagType
+  
+    return <OrientationValue>{props.orientationValue}</OrientationValue>
+  }
+  
+  const Name = (props) => {
+    const NameValue = props.tagType
+  
+    return <NameValue>{props.nameValue}</NameValue>
+  }
+  
+  const Test = (props) => (
+    <div>
+      <Orientation
+        orientationValue={props.orientationValue}
+        tagType={props.orientationTagType}
+      />
+  
+      <Name
+        nameValue={props.nameValue}
+        tagType={props.nameTagType}
+      />
+    </div>
+  )
+  
+  ReactDOM.render(
+    <div>
+      <Test
+        orientationValue='nat'
+        orientationTagType='h1'
+        nameValue='artem'
+        nameTagType='p'
+      />
+  
+      <Test
+        orientationValue='gay'
+        orientationTagType='h2'
+        nameValue='ruslan'
+        nameTagType='span'
+      />
+    </div>,
+  
+    document.getElementById('test')
+  )
+

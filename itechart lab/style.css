@@ -99,7 +99,7 @@ footer div:nth-child(2) div span:hover a {
   width: 100%;
 }
 
-.notebooks {
+.notebooks div {
   height: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -112,7 +112,7 @@ footer div:nth-child(2) div span:hover a {
   font-size: 17px;
 }
 
-.notebooks div {
+.notebooks div div {
   width: 300px;
   height: 600px;
   display: -webkit-box;
@@ -126,12 +126,12 @@ footer div:nth-child(2) div span:hover a {
       justify-content: space-around;
 }
 
-.notebooks div img:nth-child(1) {
+.notebooks div div img:nth-child(1) {
   width: 300px;
   height: 300px;
 }
 
-.notebooks div img:nth-child(3) {
+.notebooks div div img:nth-child(3) {
   width: 150px;
   height: 50px;
   -ms-flex-item-align: center;
@@ -139,34 +139,34 @@ footer div:nth-child(2) div span:hover a {
       align-self: center;
 }
 
-.notebooks div h2 {
+.notebooks div div h2 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-.notebooks div:nth-child(1) img:nth-child(3) {
+.notebooks div div:nth-child(1) img:nth-child(3) {
   width: 50px;
   height: 50px;
 }
 
-.notebooks div:nth-child(2) img:nth-child(3) {
+.notebooks div div:nth-child(2) img:nth-child(3) {
   width: 50px;
   height: 50px;
 }
 
-.notebooks div:nth-child(3) img:nth-child(3) {
+.notebooks div div:nth-child(3) img:nth-child(3) {
   width: 50px;
   height: 50px;
+}
+
+.company .like {
+  width: 100px !important;
+  height: 100px !important;
 }
 
 .company div {
   width: 33%;
-}
-
-.company div img {
-  width: 200px;
-  height: 100px;
 }
 
 .company div div:last-child {
@@ -174,17 +174,17 @@ footer div:nth-child(2) div span:hover a {
   height: 90px;
 }
 
-.company div div:last-child img {
-  width: 100px;
+.company div div:last-child img:first-child {
+  width: 200px;
   height: 100px;
 }
 
-.company div:nth-child(1) img:nth-child(1) {
-  width: 100px;
-  height: 100px;
+.company div:nth-child(1) div img {
+  width: 100px !important;
+  height: 100px !important;
 }
 
-.company div:last-child div {
+.company div:nth-child(3) div div {
   margin-top: 80px;
 }
 /*# sourceMappingURL=style.css.map */
