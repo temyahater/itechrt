@@ -1,4 +1,4 @@
-function AdminNavbar(){
+const AdminNavbar = () =>{
     return(
         <nav className="header-nav navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
           <span className="navbar-brand">eShop</span>
@@ -28,7 +28,8 @@ function AdminNavbar(){
     );
 }
 
-function UsersTable(){
+
+const UsersTable = () =>{
     return (
         <div>
         <div className="card-header" id="headingOne">
@@ -50,7 +51,7 @@ function UsersTable(){
                     <th scope="col">Username</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody-users">
                     
                 </tbody>
             </table>
@@ -60,7 +61,20 @@ function UsersTable(){
     );
 }
 
-function UserToDeleteTable(){
+class UserUpdate extends React.Component {
+    render(){ //test
+        return (
+        <tr>
+          <th scope="row">{this.props.id}</th>
+          <td>{this.props.name}</td>
+          <td>{this.props.lastname}</td>
+          <td>{this.props.username}</td>
+        </tr>
+        )
+    }
+}
+
+const UserToDeleteTable = () =>{
     return (
         <div>
         <div className="card-header" id="headingTwo">
@@ -93,7 +107,7 @@ function UserToDeleteTable(){
     );
 }
 
-function ProductsTable(){
+const ProductsTable = () =>{
     return (
         <div>
         <div className="card-header" id="headingThree">
@@ -173,13 +187,14 @@ function Modals(){
 }
 
 
-ReactDOM.render(AdminNavbar(), document.getElementById('admin-header'));
+ReactDOM.render(<AdminNavbar />, document.getElementById('admin-header'));
 
-ReactDOM.render(UsersTable(),document.getElementById('users-screen'));
+ReactDOM.render(<UsersTable />,document.getElementById('users-screen'));
+ReactDOM.render(<UserUpdate id="1" name="1" lastname="1" username="1" />,document.getElementById('tbody-users')); // test
 
-ReactDOM.render(UserToDeleteTable(),document.getElementById('users-delete'));
+ReactDOM.render(<UserToDeleteTable />,document.getElementById('users-delete'));
 
-ReactDOM.render(ProductsTable(),document.getElementById('products'));
+ReactDOM.render(<ProductsTable />,document.getElementById('products'));
 
 ReactDOM.render(Modals(),document.getElementById('product-model'));
 
