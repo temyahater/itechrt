@@ -7,7 +7,7 @@ var AllUsersDelete = [];
 var AllProducts = [];
 
 function loadUsers(){
-  fetch('/json/users.json').then((response) => response.json()).then((data) =>{
+  fetch('/users.json').then((response) => response.json()).then((data) =>{
     let out = [];
     data.forEach(function(user){
       out.push(`${user._id},${user.name},${user.surname},${user.username}`);
@@ -19,7 +19,7 @@ function loadUsers(){
 }
 
 function loadUsersToDelete(){
-  fetch('/json/userstodelete.json').then((response) => response.json()).then((data) =>{
+  fetch('/userstodelete.json').then((response) => response.json()).then((data) =>{
     let out = [];
     data.forEach(function(user){
       out.push(`${user._id},${user.name},${user.surname},${user.username}`);
@@ -31,7 +31,7 @@ function loadUsersToDelete(){
 }
 
 function loadProducts(){
-  fetch('/json/products.json').then((response) => response.json()).then((data) =>{
+  fetch('/products.json').then((response) => response.json()).then((data) =>{
     let out = [];
     data.forEach(function(product){
       out.push(`${product._id},${product.model},${product.price},${product.description},${product.picture}`);
@@ -113,18 +113,18 @@ $(document).ready(function(){
     })
 })
 
-// var pass='1';
-// $(document).ready(function(){
-//   $('#adminEnter').on('click',function(){
-//     console.log('test');
-//     if($('#login').val()==$('#password').val()&& $('#login').val()==pass) location.href ='admin profile/index.html';
-//     else if($('#password').val()!==pass) {
-//       $('#password').css('border-color', 'red');
-//       $('#login').css('border-color', 'gray');
-//     } 
-//     else $('#login').css('border-color', 'red');
-//   })
-// })
+$(document).ready(function(){
+  $('#adminEnter').on('click',function(){
+    let pass='1';
+    console.log('test');
+    if($('#login').val()==$('#password').val()&& $('#login').val()==pass) document.location.href ='admin/admin.html';
+    else if($('#password').val()!==pass) {
+      $('#password').css('border-color', 'red');
+      $('#login').css('border-color', 'gray');
+    } 
+    else $('#login').css('border-color', 'red');
+  })
+})
 
 $(document).ready(function(){
   var i=$('#products-table').find('th:last').html();
@@ -134,8 +134,8 @@ $(document).ready(function(){
     let addDescription=$('.add-description').val();
     i++;
     $('#products-table > tbody').append(`<tr><th scope="row">${i}</th><td>${addModel}</td><td>${addPrice} 
-    </td><td>${addDescription}</td><td>picture</td><td><div class=\"form-check form-check-inline\"> 
-    <input class=\"delete-check-product form-check-input\" type=\"checkbox\" value=\"option1\"></div></td></tr>`);
+    </td><td>${addDescription}</td><td>picture</td><td><div class="form-check form-check-inline"> 
+    <input class="delete-check-product form-check-input" type="checkbox" value="option1"></div></td></tr>`);
   })
 })
 
@@ -154,27 +154,24 @@ $(document).ready(function(){
 })
 
 $(document).ready(function(){
-  let i=1;
   $('.like').on('click', function(){
-    //if(i%2!=0) $(this).css('filter','drop-shadow(0px 0px 20px #888)')
-    //else $(this).css('filte','none');
-    if(i%2!=0) $(this).css('box-shadow','0px 0px 20px #888')
-    else $(this).css('box-shadow','none');
-    i++;
+    if($(this).css('filter')=='none') $(this).css('filter','drop-shadow(0px 0px 20px #888)')
+    else $(this).css('filter','none');
   })
 })
 
  $(document).ready(function(){
   $('.register').on('click',function(){
     let userName=$('#login').val();
-    let userPassword=$('#password').val();
+    // let userPassword=$('#password').val();
+    let CountUsers;
     $('.account-menu').html(userName);
     // AllUsers[CountUsers]=Users;
-    // AllUsers[CountUsers].name = $('.lastname-user').val();
-    // AllUsers[CountUsers].lastname = $('.name-user').val();
-    // AllUsers[CountUsers].username = $('#login').val();
-    // AllUsers[CountUsers].password = $('#password').val();
-    // CountUsers++;
+    AllUsers[CountUsers].name = $('.lastname-user').val();
+    AllUsers[CountUsers].lastname = $('.name-user').val();
+    AllUsers[CountUsers].username = $('#login').val();
+    AllUsers[CountUsers].password = $('#password').val();
+    CountUsers++;
   })
 })
 
@@ -193,16 +190,16 @@ $(document).ready(function(){
 $(document).ready(function(){
   let i = 1;
   $('.buy-product').on('click', function(){
-    $('.basket-list > ol').append(`<li class=\"list-group-item\">
-    <div class=\"card\">
-      <div class=\"card-header\">
-        <h5 class=\"mb-0\">
-          <button class=\"basket-product btn btn-link\">Product ${i}<input type="button" class="basket-delete ml-5 btn btn-secondary" value="Delete">
+    $('.basket-list > ol').append(`<li class="list-group-item">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <button class="basket-product btn btn-link">Product ${i}<input type="button" class="basket-delete ml-5 btn btn-secondary" value="Delete">
           </button>
         </h5>
       </div>
-      <div class=\"collapse show\">
-          <div class=\"card-body\">Info about product</div>
+      <div class="collapse show">
+          <div class="card-body">Info about product</div>
       </div></div></li>`);
       i++;
   })
@@ -210,7 +207,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('.delete-account').on('click', function(){
-    let userName=$('#login').val();
+    // let userName=$('#login').val();
     $('#users-delete-table > tbody').append(`<tr><th scope="row">1</th>
     <td>Sava</td>
     <td>Down</td>

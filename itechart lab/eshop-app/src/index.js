@@ -2,64 +2,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {AdminNavbar, UsersTable, UserUpdate, UserToDeleteTable, ProductsTable, Modals} from './admin scripts/admin'
+import { MainNavbar, NavbarModalAccountDelete, NavbarModalRegistration, NavbarModalBasket, NavbarCarousel,
+Notebooks, Company1, Company2, Company3, SomeInformation, Contacts} from './user/user';
 
 
-ReactDOM.render(<AdminNavbar />, document.getElementById('admin-header'));
+ReactDOM.render(<MainNavbar />, document.getElementById('header-nav'));
 
-ReactDOM.render(<UsersTable />,document.getElementById('users-screen'));
-ReactDOM.render(<UserUpdate id="1" name="1" lastname="1" username="1" />,document.getElementById('tbody-users')); // test
+ReactDOM.render(<NavbarModalAccountDelete />, document.getElementById('deleteAccount'));
 
-ReactDOM.render(<UserToDeleteTable />,document.getElementById('users-delete'));
+ReactDOM.render(<NavbarModalRegistration />, document.getElementById('account'));
 
-ReactDOM.render(<ProductsTable />,document.getElementById('products'));
+ReactDOM.render(<NavbarModalBasket />, document.getElementById('basket'));
 
-ReactDOM.render(Modals(),document.getElementById('product-model'));
+ReactDOM.render(<NavbarCarousel />, document.getElementById('header-slider'));
 
-const Orientation = (props) => {
-    const OrientationValue = props.tagType
-  
-    return <OrientationValue>{props.orientationValue}</OrientationValue>
-  }
-  
-  const Name = (props) => {
-    const NameValue = props.tagType
-  
-    return <NameValue>{props.nameValue}</NameValue>
-  }
-  
-  const Test = (props) => (
+ReactDOM.render(
     <div>
-      <Orientation
-        orientationValue={props.orientationValue}
-        tagType={props.orientationTagType}
-      />
-  
-      <Name
-        nameValue={props.nameValue}
-        tagType={props.nameTagType}
-      />
+        <span><img src="images/quality.png" alt="quality"/>Quality</span>
+        <span><img src="images/w512h5121377939972185093dashboardspeedstreamline.png" alt="performance"/>Performance</span>
+        <span><img src="images/dollar_sign_PNG43.png" alt="availability"/>Availability</span>
     </div>
-  )
-  
-  ReactDOM.render(
-    <div>
-      <Test
-        orientationValue='nat'
-        orientationTagType='h1'
-        nameValue='artem'
-        nameTagType='p'
-      />
-  
-      <Test
-        orientationValue='gay'
-        orientationTagType='h2'
-        nameValue='ruslan'
-        nameTagType='span'
-      />
-    </div>,
-  
-    document.getElementById('test')
-  )
+    ,document.getElementById('main-head'));
 
+ReactDOM.render(<span className="display-4 shadow">Notebooks</span>, document.getElementById('main-title'));
+
+ReactDOM.render(<Notebooks />, document.getElementById('notebooks'));
+
+ReactDOM.render(<Company1 />, document.getElementById('company1'));
+
+ReactDOM.render(<Company2 />, document.getElementById('company2'));
+
+ReactDOM.render(<Company3 />, document.getElementById('company3'));
+
+ReactDOM.render(<SomeInformation />, document.getElementById('footer-info'));
+
+ReactDOM.render(<Contacts />, document.getElementById('footer-author'));
 
