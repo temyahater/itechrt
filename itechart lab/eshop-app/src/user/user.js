@@ -1,5 +1,6 @@
 import React from 'react';
 import '../script/main-script';
+import { render } from 'react-dom';
 
 const MainNavbar = ()=>{
   return (
@@ -211,86 +212,37 @@ const Notebook = (props) => {
   );
 }
 
+class Notebooks extends React.Component {
+  constructor(){
+    super();
+    this.state = { notebooks: [] };
+  }
 
+  async componentDidMount(){
 
+    const response = await fetch('/notebooks.json');
+    const json = await response.json();
+    this.setState({ notebooks: json });
+  }
 
-const Notebooks = ()=>{
-  return (
-    <div>
-          <Notebook
-            noteImgSrc="images/omen1.png" 
-            noteImgAlt="laptop1" 
-            modelValue="Model" 
-            logoImgSrc="images/omenlogo.png"
-            logoImgAlt="laptop logo"
-            priceValue="Price" 
-            descriptionValue="Description" 
-          />
-          <Notebook
-            noteImgSrc="images/omen2.png" 
-            noteImgAlt="laptop1" 
-            modelValue="Model" 
-            logoImgSrc="images/omenlogo.png"
-            logoImgAlt="laptop logo"
-            priceValue="Price" 
-            descriptionValue="Description" 
-          />
-          <Notebook
-            noteImgSrc="images/omen3.png" 
-            noteImgAlt="laptop1" 
-            modelValue="Model" 
-            logoImgSrc="images/omenlogo.png"
-            logoImgAlt="laptop logo"
-            priceValue="Price" 
-            descriptionValue="Description" 
-          />
-          <Notebook
-            noteImgSrc="images/asus1.png" 
-            noteImgAlt="laptop1" 
-            modelValue="Model" 
-            logoImgSrc="images/asuslogo.png"
-            logoImgAlt="laptop logo"
-            priceValue="Price" 
-            descriptionValue="Description" 
-          />
-          <Notebook
-            noteImgSrc="images/asus2.png" 
-            noteImgAlt="laptop1" 
-            modelValue="Model" 
-            logoImgSrc="images/asuslogo.png"
-            logoImgAlt="laptop logo"
-            priceValue="Price" 
-            descriptionValue="Description" 
-          />
-          <Notebook
-            noteImgSrc="images/asus3.png" 
-            noteImgAlt="laptop1" 
-            modelValue="Model" 
-            logoImgSrc="images/asuslogo.png"
-            logoImgAlt="laptop logo"
-            priceValue="Price" 
-            descriptionValue="Description" 
-          />
-          <Notebook
-            noteImgSrc="images/msi3.png" 
-            noteImgAlt="laptop1" 
-            modelValue="Model" 
-            logoImgSrc="images/msilogo.png"
-            logoImgAlt="laptop logo"
-            priceValue="Price" 
-            descriptionValue="Description" 
-          />
-          <Notebook
-            noteImgSrc="images/msi2.png" 
-            noteImgAlt="laptop1" 
-            modelValue="Model" 
-            logoImgSrc="images/msilogo.png"
-            logoImgAlt="laptop logo"
-            priceValue="Price" 
-            descriptionValue="Description" 
-          />
-    </div>
-  );
+  render() {
+    return (
+      <div>
+          {this.state.notebooks.map((el,i) => (
+            <Notebook 
+              key = {i}
+              noteImgSrc = {el.noteImgSrc}
+              noteImgAlt = {el.noteImgAlt}
+              modelValue = {el.modelValue}
+              logoImgSrc = {el.logoImgSrc}
+              logoImgAlt = {el.logoImgAlt}
+              priceValue = {el.priceValue}
+              descriptionValue = {el.descriptionValue}
+            />
+          ))}
+      </div>
+    );
+  }
 }
 
 const CompanyHeader = (props) =>{
@@ -328,65 +280,36 @@ const Company = (props) =>{
   );
 }
 
-const Company1 = ()=>{
-  return (
-    <Company 
-      companyHeaderInfo="The Omen series leads off with two laptops simply called the Omen. 
-      They're identical black notebooks with red highlights — sorry, 'dragon red' highlights, 
-      according to HP — around each key and on the lid. HP's logo only shows up on the inside; 
-      instead, the back of the laptops display a strange red diamond that looks vaguely gamery." 
-      companyLogoLink="images/omenlogo.png" 
-      companyLogoAlt="logo company"
-      companyMainInfo="The line is kicking off today with the announcement of four products: two laptops, a tower, and a display.
-      For the most part, these first products are starting toward the higher end of the market." 
-      companyFooterInfo="The two Omen laptops are differentiated by size and specs. 
-      The smaller model has a 15.6-inch display and starts with one of Intel's Core i3 processors; 
-      the larger model has a 17.3-inch display and starts with an i5 processor. 
-      Both can be configured with up to an i7 processor, 16GB of RAM, a GeForce GTX 965M GPU, and a 4K display." 
-      companyLikeLink="images/like.png" 
-    />
-  );
-}
+class Companys extends React.Component {
+  constructor(){
+    super();
+    this.state = {companys : []};
+  }
 
-const Company2 = ()=>{
-  return (
-    <Company 
-      companyHeaderInfo="AsusTek Computer Inc. is a Taiwan-based multinational computer and phone hardware and electronics company 
-      headquartered in Beitou District, Taipei, Taiwan. Its products include desktops, laptops, netbooks, mobile phones, 
-      networking equipment, monitors, WIFI routers, projectors, motherboards, graphics cards, optical storage, multimedia 
-      products, peripherals, wearables, servers, workstations, and tablet PCs. The company is also an original equipment 
-      manufacturer." 
-      companyLogoLink="images/asuslogo.png" 
-      companyLogoAlt="logo company"
-      companyMainInfo="Asus was founded in Taipei in 1989 by T.H. Tung, Ted Hsu, Wayne Hsieh and M.T. Liao, 
-      all four having previously worked at Acer as hardware engineers. 
-      At this time, Taiwan had yet to establish a leading position in the computer-hardware business. 
-      Intel Corporation would supply any new processors to more established companies like IBM first, 
-      and Taiwanese companies would have to wait for approximately six months after IBM received their engineering prototypes." 
-      companyLikeLink="images/like.png" 
-    />
-  );
-}
+  async componentDidMount(){
 
-const Company3 = ()=>{
-  return (
-    <Company 
-      companyHeaderInfo="Micro-Star International Co., Ltd is a Taiwanese multinational information 
-      technology corporation headquartered in New Taipei City, Taiwan. It designs, develops and provides computer hardware, 
-      related products and services, including laptops, desktops, motherboards, graphics cards, All-in-One PCs, 
-      servers, industrial computers, PC peripherals, car infotainment products, etc.
-      The company has a primary listing on the Taiwan Stock Exchange and was established in August 1986 by 5 founders 
-      – Hsu Xiang, Huang Jinqing, Lin Wentong, 
-      Yu Xian'neng, and Lu Qilong. 
-      The company has been a sponsor for a number of eSports teams and is also the host of the international gaming 
-      event MSI Masters Gaming Arena. The earliest Beat IT tournament can 
-      be traced back to 2010, featuring Evil Geniuses winning the championship. The company's slogan as seen in 2017 
-      is 'TRUE GAMING. SOME ARE PC, WE ARE GAMING.'" 
-      companyLogoLink="images/msilogo.png" 
-      companyLogoAlt="logo company"
-      companyLikeLink="images/like.png" 
-    />
-  );
+    const response = await fetch('/companys.json');
+    const json = await response.json();
+    this.setState({ companys: json });
+  }
+
+  render() {
+    return (
+      <div className="d-flex justify-content-around">
+          {this.state.companys.map((item,i) => (
+            <Company 
+              key = {i}
+              companyHeaderInfo = {item.companyHeaderInfo}
+              companyLogoLink = {item.companyLogoLink}
+              companyLogoAlt = {item.companyLogoAlt}
+              companyMainInfo = {item.companyMainInfo}
+              companyFooterInfo = {item.companyFooterInfo}
+              companyLikeLink = {item.companyLikeLink}
+            />
+          ))}
+      </div>
+    );
+  }
 }
 
 const SomeInformation = ()=>{
@@ -434,5 +357,5 @@ const Contacts = ()=>{
 }
 
 export {MainNavbar, NavbarModalAccountDelete, NavbarModalRegistration, NavbarModalBasket, NavbarCarousel,
-Notebooks, Company1, Company2, Company3, SomeInformation, Contacts};
+Notebooks, SomeInformation, Contacts, Companys};
 

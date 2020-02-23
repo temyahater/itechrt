@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { MainNavbar, NavbarModalAccountDelete, NavbarModalRegistration, NavbarModalBasket, NavbarCarousel,
-Notebooks, Company1, Company2, Company3, SomeInformation, Contacts} from './user/user';
+Notebooks, SomeInformation, Contacts, Companys} from './user/user';
 
 
 ReactDOM.render(<MainNavbar />, document.getElementById('header-nav'));
@@ -28,11 +28,7 @@ ReactDOM.render(<span className="display-4 shadow">Notebooks</span>, document.ge
 
 ReactDOM.render(<Notebooks />, document.getElementById('notebooks'));
 
-ReactDOM.render(<Company1 />, document.getElementById('company1'));
-
-ReactDOM.render(<Company2 />, document.getElementById('company2'));
-
-ReactDOM.render(<Company3 />, document.getElementById('company3'));
+ReactDOM.render(<Companys />, document.getElementById('companys'));
 
 ReactDOM.render(<SomeInformation />, document.getElementById('footer-info'));
 

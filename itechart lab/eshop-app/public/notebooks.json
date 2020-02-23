@@ -1,0 +1,74 @@
+[
+    {   
+        "noteImgSrc":"images/omen1.png",
+        "noteImgAlt":"laptop1",
+        "modelValue":"Model",
+        "logoImgSrc":"images/omenlogo.png",
+        "logoImgAlt":"laptop logo",
+        "priceValue":"Price",
+        "descriptionValue":"Description"
+    },
+    {
+        "noteImgSrc":"images/omen2.png",
+        "noteImgAlt":"laptop1",
+        "modelValue":"Model",
+        "logoImgSrc":"images/omenlogo.png",
+        "logoImgAlt":"laptop logo",
+        "priceValue":"Price",
+        "descriptionValue":"Description"
+    },
+    {
+        "noteImgSrc":"images/omen3.png",
+        "noteImgAlt":"laptop1",
+        "modelValue":"Model",
+        "logoImgSrc":"images/omenlogo.png",
+        "logoImgAlt":"laptop logo",
+        "priceValue":"Price",
+        "descriptionValue":"Description"
+    },
+    {
+        "noteImgSrc":"images/asus1.png",
+        "noteImgAlt":"laptop1",
+        "modelValue":"Model",
+        "logoImgSrc":"images/asuslogo.png",
+        "logoImgAlt":"laptop logo",
+        "priceValue":"Price",
+        "descriptionValue":"Description"
+    },
+    {
+        "noteImgSrc":"images/asus2.png",
+        "noteImgAlt":"laptop1",
+        "modelValue":"Model",
+        "logoImgSrc":"images/asuslogo.png",
+        "logoImgAlt":"laptop logo",
+        "priceValue":"Price",
+        "descriptionValue":"Description"
+    },
+    {
+        "noteImgSrc":"images/asus3.png",
+        "noteImgAlt":"laptop1",
+        "modelValue":"Model",
+        "logoImgSrc":"images/asuslogo.png",
+        "logoImgAlt":"laptop logo",
+        "priceValue":"Price",
+        "descriptionValue":"Description"
+    },
+    {
+        "noteImgSrc":"images/msi3.png",
+        "noteImgAlt":"laptop1",
+        "modelValue":"Model",
+        "logoImgSrc":"images/msilogo.png",
+        "logoImgAlt":"laptop logo",
+        "priceValue":"Price",
+        "descriptionValue":"Description"
+    },
+    {
+        "noteImgSrc":"images/msi2.png",
+        "noteImgAlt":"laptop1",
+        "modelValue":"Model",
+        "logoImgSrc":"images/msilogo.png",
+        "logoImgAlt":"laptop logo",
+        "priceValue":"Price",
+        "descriptionValue":"Description"
+    }
+]
